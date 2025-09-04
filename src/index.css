@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Rancho do Maia - Design System Terroso e Natural */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - tons naturais */
+    --background: 42 20% 96%;
+    --foreground: 28 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 42 25% 98%;
+    --card-foreground: 28 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 42 25% 98%;
+    --popover-foreground: 28 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - tons de terra/madeira */
+    --primary: 28 45% 35%;
+    --primary-foreground: 42 30% 95%;
+    --primary-glow: 28 55% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - verde musgo */
+    --secondary: 88 25% 45%;
+    --secondary-foreground: 42 30% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - laranja/barro */
+    --accent: 18 85% 55%;
+    --accent-foreground: 42 30% 95%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 42 15% 88%;
+    --muted-foreground: 28 15% 55%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 42 30% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 20% 85%;
+    --input: 42 20% 90%;
+    --ring: 28 45% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(28, 45%, 35%), hsl(18, 85%, 55%));
+    --gradient-card: linear-gradient(145deg, hsl(42, 25%, 98%), hsl(42, 15%, 92%));
+    --gradient-accent: linear-gradient(135deg, hsl(18, 85%, 55%), hsl(28, 75%, 45%));
+    --gradient-nature: linear-gradient(180deg, hsl(88, 25%, 45%), hsl(88, 35%, 35%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(28, 45%, 35% / 0.1);
+    --shadow-strong: 0 8px 30px hsl(28, 45%, 35% / 0.15);
+    --shadow-glow: 0 0 20px hsl(18, 85%, 55% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +74,53 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 28 25% 8%;
+    --foreground: 42 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 28 20% 12%;
+    --card-foreground: 42 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 28 20% 12%;
+    --popover-foreground: 42 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 42 30% 85%;
+    --primary-foreground: 28 25% 15%;
+    --primary-glow: 42 40% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 88 20% 25%;
+    --secondary-foreground: 42 30% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 18 75% 45%;
+    --accent-foreground: 42 30% 95%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 28 15% 20%;
+    --muted-foreground: 42 20% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 42 30% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 28 15% 25%;
+    --input: 28 15% 25%;
+    --ring: 42 30% 85%;
+
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(28, 25%, 15%), hsl(18, 75%, 35%));
+    --gradient-card: linear-gradient(145deg, hsl(28, 20%, 12%), hsl(28, 15%, 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(18, 75%, 45%), hsl(28, 65%, 35%));
+    --gradient-nature: linear-gradient(180deg, hsl(88, 20%, 25%), hsl(88, 25%, 20%));
+
+    --shadow-soft: 0 4px 20px hsl(0, 0%, 0% / 0.3);
+    --shadow-strong: 0 8px 30px hsl(0, 0%, 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(18, 75%, 45% / 0.4);
+
+    --sidebar-background: 28 25% 10%;
+    --sidebar-foreground: 42 30% 90%;
+    --sidebar-primary: 18 75% 45%;
+    --sidebar-primary-foreground: 42 30% 95%;
+    --sidebar-accent: 28 15% 18%;
+    --sidebar-accent-foreground: 42 30% 90%;
+    --sidebar-border: 28 15% 20%;
+    --sidebar-ring: 18 75% 45%;
   }
 }
 
@@ -100,6 +130,55 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
