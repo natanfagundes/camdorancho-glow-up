@@ -76,7 +76,12 @@ export const VipPlans = () => {
             </div>
 
             <div className="pt-6 text-center">
-              <Button size="xl" variant="hero" className="w-full sm:w-auto px-12">
+              <Button 
+                size="xl" 
+                variant="hero" 
+                className="w-full sm:w-auto px-12"
+                onClick={() => window.open('https://checkout.arkama.com.br/pay/PL1KVPCD', '_blank')}
+              >
                 ASSINAR AGORA
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
